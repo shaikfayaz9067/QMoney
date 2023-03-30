@@ -13,6 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -46,7 +47,21 @@ public class PortfolioManagerApplication {
 
   public static List<String> mainReadFile(String[] args) throws IOException, URISyntaxException {
 
-     return Collections.emptyList();
+    File trade=resolveFileFromResources(args[0]);
+
+    ObjectMapper mapper = getObjectMapper();
+
+    PortfolioTrade[] portfolio=mapper.readValue(trade, PortfolioTrade[].class);
+
+    List<String> symbolList=new ArrayList<>();
+
+    for (PortfolioTrade portfolioTrade : portfolio) {
+           symbolList.add(portfolioTrade.getSymbol());
+    }
+    
+   
+
+     return symbolList;
   }
 
 
