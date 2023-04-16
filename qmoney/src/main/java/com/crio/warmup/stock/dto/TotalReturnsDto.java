@@ -29,8 +29,6 @@ public class TotalReturnsDto {
 
   //acending order to sort total returns DTO objects according to closing price
 
-
-
-
 }
+
 
