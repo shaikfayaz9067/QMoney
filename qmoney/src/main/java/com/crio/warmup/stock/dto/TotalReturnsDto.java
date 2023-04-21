@@ -26,9 +26,4 @@ public class TotalReturnsDto {
   public void setClosingPrice(Double closingPrice) {
     this.closingPrice = closingPrice;
   }
-
-  //acending order to sort total returns DTO objects according to closing price
-
 }
-
-
