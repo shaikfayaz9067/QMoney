@@ -157,9 +157,6 @@ public class PortfolioManagerApplication {
   // 1. You may need to copy relevant code from #mainReadQuotes to parse the Json.
   // 2. Remember to get the latest quotes from Tiingo API.
 
-
-
-
   // TODO:
   //  After refactor, make sure that the tests pass by using these two commands
   //  ./gradlew test --tests PortfolioManagerApplicationTest.readTradesFromJson
@@ -182,8 +179,6 @@ public class PortfolioManagerApplication {
   }
 
 
-
-
   // TODO:
   //  Build the Url using given parameters and use this function in your code to cann the API.
   public static String prepareUrl(PortfolioTrade trade, LocalDate endDate, String token) {
@@ -201,8 +196,6 @@ public class PortfolioManagerApplication {
       objectMapper.registerModule(new JavaTimeModule());
       return objectMapper;
    }
-
-
 
    public static List<String> debugOutputs() {
         String valueOfArgument0 = "trades.json";
@@ -306,23 +299,6 @@ public class PortfolioManagerApplication {
 
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   // TODO: CRIO_TASK_MODULE_REFACTOR
   //  Once you are done with the implementation inside PortfolioManagerImpl and
   //  PortfolioManagerFactory, create PortfolioManager using PortfolioManagerFactory.
@@ -347,9 +323,6 @@ public class PortfolioManagerApplication {
   public static void main(String[] args) throws Exception {
     Thread.setDefaultUncaughtExceptionHandler(new UncaughtExceptionHandler());
     ThreadContext.put("runId", UUID.randomUUID().toString());
-
-
-
 
     printJsonObject(mainCalculateReturnsAfterRefactor(args));
   }
